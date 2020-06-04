@@ -38,15 +38,16 @@ function ProductScreen(props) {
                                 </li>
                                 <li>
                                     {product.rating} Stars ({product.numReviews} Reviews)
-                </li>
+                                </li>
                                 <li>
                                     Price: <b>{product.price}€</b>
                                 </li>
                                 <li>
+                                    Category: <b>{product.category}</b>
+                                </li>
+                                <li>
                                     Description:
-                  <div>
-                                        {product.description}
-                                    </div>
+                                    <div> {product.description}</div>
                                 </li>
                             </ul>
                         </div>
