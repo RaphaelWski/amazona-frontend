@@ -68,7 +68,7 @@ function App() {
             <Route path="/products" component={ProductsScreen} />
             <Route path="/signin/" component={SigninScreen}/>
             <Route path="/register" component={RegisterScreen} />
-            <Route path="/products/:id" component={ProductScreen}/>
+            <Route path="/product/:id" component={ProductScreen}/>
             <Route path="/cart/:id?" component={CartScreen}/>
             <Route path="/" exact={true} component={HomeScreen}/>
           </div>
