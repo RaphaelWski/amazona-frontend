@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
+import CartScreen from './screens/CartScreen';
 
 function App() {
 
@@ -21,10 +22,10 @@ function App() {
             <button onClick={openMenu}>
               &#9776;
             </button>
-            <a href="index.html">amazona</a>
+            <Link to="/" >amazona</Link>
           </div>
           <div className="header-links">
-            <a href="cart.html">Cart</a>
+          <Link to="/cart">Cart</Link>
             <a href="signin.html">Sign In</a>
           </div>
         </header>
@@ -33,11 +34,10 @@ function App() {
           <button className="sidebar-close-button" onClick={closeMenu}>x</button>
           <ul>
             <li>
-              <a href="index.html">Pants</a>
+              <Link to="/category/Pants">Pants</Link>
             </li>
-
             <li>
-              <a href="index.html">Shirts</a>
+              <Link to="/category/Shirts">Shirts</Link>
             </li>
 
           </ul>
@@ -45,6 +45,7 @@ function App() {
         <main className="main">
           <div className="content">
             <Route path="/products/:id" component={ProductScreen}/>
+            <Route path="/cart/:id?" component={CartScreen}/>
             <Route path="/" exact={true} component={HomeScreen}/>
           </div>
 
