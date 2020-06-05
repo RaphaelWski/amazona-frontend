@@ -79,7 +79,7 @@ function ProfileScreen(props) {
                 </form>
             </div>
         </div>
-        <div className="profile-orders content-margined">
+        {/* <div className="profile-orders content-margined">
             {
                 loadingOrders ? <div>Loading...</div> :
                     errorOrders ? <div>{errorOrders} </div> :
@@ -106,7 +106,7 @@ function ProfileScreen(props) {
                             </tbody>
                         </table>
             }
-        </div>
+        </div> */}
     </div>
 
 }
