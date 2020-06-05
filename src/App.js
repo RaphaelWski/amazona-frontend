@@ -13,6 +13,7 @@ import PaymentScreen from './screens/PaymentScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import OrdersScreen from './screens/OrdersScreen';
 
 function App() {
 
@@ -70,6 +71,7 @@ function App() {
         </aside>
         <main className="main">
           <div className="content">
+          <Route path="/orders" component={OrdersScreen} />
             <Route path="/profile" component={ProfileScreen} />
             <Route path="/order/:id" component={OrderScreen} />
             <Route path="/products" component={ProductsScreen} />
