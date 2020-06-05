@@ -35,8 +35,8 @@ function CartScreen(props) {
                     </div>
                 </li>
                 {
-                    cartItems.length === 0 ? <div>Cart is empty</div> : cartItems.map(item =>
-                        <li>
+                    cartItems.length === 0 ? <div>Cart is empty</div> : cartItems.map((item, index) =>
+                        <li key={index}>
                             <div className="cart-image">
                                 <img src={item.image} alt="product" />
                             </div>
@@ -58,7 +58,7 @@ function CartScreen(props) {
                                 </div>
                             </div>
                             <div className="cart-price">
-                                ${item.price}
+                                {item.price}€
                             </div>
                         </li>
                     )
@@ -67,7 +67,7 @@ function CartScreen(props) {
         </div>
         <div className="cart-action">
             <h3>
-                Subtotal ( {cartItems.reduce((a, c) => a + c.qty, 0)} items) : $ {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
+                Subtotal ( {cartItems.reduce((a, c) => a + c.qty, 0)} items) : {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}€
             </h3>
             <button onClick={checkoutHandler} className="button primary full-width" disabled={cartItems.length === 0}>
                 Proceed to Checkout

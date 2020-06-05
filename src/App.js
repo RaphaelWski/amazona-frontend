@@ -12,6 +12,7 @@ import ShippingScreen from './screens/ShippingScreen';
 import PaymentScreen from './screens/PaymentScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
+import ProfileScreen from './screens/ProfileScreen';
 
 function App() {
 
@@ -36,7 +37,7 @@ function App() {
             <Link to="/" >amazona</Link>
           </div>
           <div className="header-links">
-          {userInfo && userInfo.isAdmin && (
+            {userInfo && userInfo.isAdmin && (
               <div className="dropdown">
                 <a href="#"  >Admin</a>
                 <ul className="dropdown-content">
@@ -47,7 +48,7 @@ function App() {
                 </ul>
               </div>
             )}
-          <Link to="/cart">Cart</Link>
+            <Link to="/cart">Cart</Link>
             {
               userInfo ? <Link to="/profile">{userInfo.name}</Link> :
                 <Link to="/signin">Sign In</Link>
@@ -69,16 +70,17 @@ function App() {
         </aside>
         <main className="main">
           <div className="content">
+            <Route path="/profile" component={ProfileScreen} />
             <Route path="/order/:id" component={OrderScreen} />
             <Route path="/products" component={ProductsScreen} />
             <Route path="/shipping" component={ShippingScreen} />
             <Route path="/payment" component={PaymentScreen} />
             <Route path="/placeorder" component={PlaceOrderScreen} />
-            <Route path="/signin/" component={SigninScreen}/>
+            <Route path="/signin/" component={SigninScreen} />
             <Route path="/register" component={RegisterScreen} />
-            <Route path="/product/:id" component={ProductScreen}/>
-            <Route path="/cart/:id?" component={CartScreen}/>
-            <Route path="/" exact={true} component={HomeScreen}/>
+            <Route path="/product/:id" component={ProductScreen} />
+            <Route path="/cart/:id?" component={CartScreen} />
+            <Route path="/" exact={true} component={HomeScreen} />
           </div>
 
         </main>

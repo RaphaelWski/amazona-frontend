@@ -71,7 +71,7 @@ function PlaceOrderScreen(props) {
                                 </div>
                                 :
                                 cartItems.map(item =>
-                                    <li>
+                                    <li key={item._id}>
                                         <div className="cart-image">
                                             <img src={item.image} alt="product" />
                                         </div>
@@ -87,7 +87,7 @@ function PlaceOrderScreen(props) {
                                             </div>
                                         </div>
                                         <div className="cart-price">
-                                            ${item.price}
+                                            {item.price}€
                                         </div>
                                     </li>
                                 )
@@ -105,19 +105,19 @@ function PlaceOrderScreen(props) {
                     </li>
                     <li>
                         <div>Items</div>
-                        <div>${itemsPrice}</div>
+                        <div>€{itemsPrice}</div>
                     </li>
                     <li>
                         <div>Shipping</div>
-                        <div>${shippingPrice}</div>
+                        <div>€{shippingPrice}</div>
                     </li>
                     <li>
                         <div>Tax</div>
-                        <div>${taxPrice}</div>
+                        <div>€{taxPrice}</div>
                     </li>
                     <li>
                         <div>Order Total</div>
-                        <div>${totalPrice}</div>
+                        <div>€{totalPrice}</div>
                     </li>
                 </ul>
             </div>
